@@ -12,10 +12,11 @@ import employeeList from '@/components/employeeList.vue'
 
         <div class="wrapper">
           <nav>
-            <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/">Новости</RouterLink>
             <RouterLink to="/photoGallery">Фотогаллерея</RouterLink>
             <RouterLink to="/aboutUs">О нас</RouterLink>
             <RouterLink to="/contactUs">Контакты</RouterLink>
+            <RouterLink to="/feedback">Отзывы</RouterLink>
           </nav>
         </div>
       </header>
@@ -79,7 +80,7 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-background-mute);
 }
 
 nav a:first-of-type {

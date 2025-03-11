@@ -11,12 +11,14 @@ export const useAppStore = defineStore('app', {
     news: [],
     employees: [],
     animals: [],
+    feedbacks: [],
   }),
   
   getters: {
     getNews: (state) => {state.news},
     getEmployee: (state) => {state.employees},
     getAnimals: (state) => {state.animals},
+    getFeedbacks: (state) => {state.feedbacks}
   },
   
   actions: {
@@ -49,6 +51,29 @@ export const useAppStore = defineStore('app', {
       } catch (err) {
         this.error = err instanceof Error ? err.message : 'Неизвестная ошибка'
         console.error('Ошибка при получении данных:', err)
+      } finally {
+        this.loading = false
+      }
+    },
+    async fetchFeedbacks() {
+      try {
+        const response = await api.get('feedbacks')
+        this.feedbacks = response.data
+      } catch (err) {
+        this.error = err instanceof Error ? err.message : 'Неизвестная ошибка'
+        console.error('Ошибка при получении данных:', err)
+      } finally {
+        this.loading = false
+      }
+    },
+    async createFeedback(createFeedback) {
+      try {
+        const response = await api.post('feedbacks', {...createFeedback})
+        this.feedbacks = response.data
+      } catch (err) {
+        this.error = err instanceof Error ? err.message : 'Неизвестная ошибка'
+        console.error('Ошибка при отправки данных:', err)
+        console.log({...createFeedback})
       } finally {
         this.loading = false
       }

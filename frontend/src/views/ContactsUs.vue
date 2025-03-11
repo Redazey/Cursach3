@@ -88,10 +88,6 @@
   color: var(--color-heading);
 }
 
-.contacts-table td:nth-child(2) {
-  color: var(--color-text);
-}
-
 .contacts-table tbody tr:hover {
   background-color: var(--vt-c-white-soft);
 }

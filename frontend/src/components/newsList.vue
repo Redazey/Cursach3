@@ -1,7 +1,7 @@
 <template>
   <div class="news-container">
     <article class="news-card" v-for="n in news" :key="n.id">
-      <img :src="n.image_path" @error="handleImageError" loading="lazy" />
+      <img :src="n.image_path" @error="handleImageError" height="200px" loading="lazy" />
       <h4>{{ n.title }}</h4>
       <h5>{{ n.content }}</h5>
       <h5>{{ n.publication_date }}</h5>

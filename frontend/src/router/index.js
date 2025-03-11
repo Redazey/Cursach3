@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutUs from '@/views/AboutUs.vue'
 import ContactsUs from '@/views/ContactsUs.vue'
 import PhotoGallery from '@/views/PhotoGallery.vue'
+import FeedBack from '@/views/FeedBack.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/photoGallery',
       name: 'photo gallery',
       component: PhotoGallery,
+    },
+    {
+      path: '/feedBack',
+      name: 'feedback',
+      component: FeedBack,
     },
   ],
 })

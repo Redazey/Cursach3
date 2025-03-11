@@ -9,6 +9,15 @@ CREATE TABLE veterinarians (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Создание таблицы отзывов
+CREATE TABLE feedbacks (
+    id SERIAL PRIMARY KEY,
+    nickname VARCHAR(100) NOT NULL,
+    feedback_text TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    edited_at TIMESTAMP NULL
+);
+
 -- Создание таблицы животные
 CREATE TABLE animals (
     id SERIAL PRIMARY KEY,

@@ -56,11 +56,11 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
-  background-color: var(--color-background);
 }
 
 .about-section {
   margin-bottom: 3.5rem;
+  background-color: var(--color-background-mute);
   position: relative;
   padding: 1rem;
   border-radius: 12px;

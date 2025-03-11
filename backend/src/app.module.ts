@@ -3,6 +3,7 @@ import { AnimalsModule } from './animals/animals.module';
 import { EmployeeModule } from './employee/employee.module';
 import { NewsModule } from './news/news.module';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { FeedbacksModule } from './feedbacks/feedbacks.module';
 
 @Module({
   imports: [
@@ -10,8 +11,8 @@ import { SequelizeModule } from '@nestjs/sequelize';
       dialect: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'postgres',
-      password: 'backend1!',
+      username: 'backend',
+      password: 'backend!',
       database: 'veterenary',
       autoLoadModels: true,
       synchronize: true,
@@ -19,6 +20,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
     AnimalsModule,
     EmployeeModule,
     NewsModule,
+    FeedbacksModule,
   ],
   controllers: [],
   providers: [],
