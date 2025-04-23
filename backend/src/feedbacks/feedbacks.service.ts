@@ -12,7 +12,9 @@ export class FeedbacksService {
   }
 
   async findAll() {
-    return this.feedbackModel.findAll();
+    return this.feedbackModel.findAll({
+      order: [['created_at', 'DESC']],
+    });
   }
 
   async delete(Id: number) {

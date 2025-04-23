@@ -4,6 +4,7 @@ import { NewsModule } from './news/news.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { FeedbacksModule } from './feedbacks/feedbacks.module';
 import { AuthModule } from './auth/auth.module';
+import { FileModule } from './file/file.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { AuthModule } from './auth/auth.module';
     EmployeeModule,
     NewsModule,
     FeedbacksModule,
+    FileModule,
   ],
   controllers: [],
   providers: [],

@@ -8,7 +8,9 @@ export class NewsService {
   constructor(@InjectModel(ClinicNews) private newsModel: typeof ClinicNews) {}
 
   async getNews() {
-    return this.newsModel.findAll();
+    return this.newsModel.findAll({
+      order: [['created_at', 'DESC']],
+    });
   }
 
   async delete(id: number) {

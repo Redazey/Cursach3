@@ -10,7 +10,9 @@ export class EmployeeService {
   ) {}
 
   async getEmployees() {
-    return this.employeeModel.findAll();
+    return this.employeeModel.findAll({
+      order: [['created_at', 'DESC']],
+    });
   }
   async createEmployee(employee: CreationAttributes<Veterinarian>) {
     return this.employeeModel.create(employee);

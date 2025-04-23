@@ -20,6 +20,12 @@ export class Veterinarian extends Model {
   id: number;
 
   @Column({
+    type: DataType.STRING(255),
+    allowNull: true,
+  })
+  image_path: string;
+
+  @Column({
     type: DataType.STRING(100),
     allowNull: false,
   })

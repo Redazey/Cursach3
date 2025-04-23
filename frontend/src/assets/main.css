@@ -40,7 +40,8 @@ button:disabled {
   margin-bottom: 15px;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;

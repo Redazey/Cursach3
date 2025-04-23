@@ -7,6 +7,6 @@
 </template>
 
 <script setup>
-import FeedbacksList from '@/components/feedbacksList.vue';
-import FeedbackTextArea from '@/components/feedbackTextArea.vue';
+import FeedbacksList from '@/components/feedbacksList.vue'
+import FeedbackTextArea from '@/components/feedbackTextArea.vue'
 </script>

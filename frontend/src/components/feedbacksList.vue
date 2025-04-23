@@ -16,8 +16,8 @@ import { onMounted } from 'vue'
 const appStore = useAppStore()
 const { feedbacks, jwtToken } = storeToRefs(appStore)
 
-const deleteFeedbackClick = async(id) => {
-  
+const deleteFeedbackClick = async (id) => {
+  await appStore.deleteFeedback(id)
 }
 
 onMounted(async () => {

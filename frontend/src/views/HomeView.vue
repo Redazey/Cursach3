@@ -1,11 +1,9 @@
 <script setup>
-import NewsList from '@/components/newsList.vue';
+import NewsList from '@/components/newsList.vue'
 </script>
 
 <template>
   <NewsList />
 </template>
 
-<style>
-
-</style>
+<style></style>

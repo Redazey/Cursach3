@@ -2,14 +2,14 @@
   <form @submit.prevent="sendForm" class="form">
     <div class="form-group">
       <label for="login">login</label>
-      <input 
+      <input
         id="login"
-        v-model="auth.login" 
-        type="text" 
-        required 
+        v-model="auth.login"
+        type="text"
+        required
         maxlength="50"
         placeholder="login"
-      >
+      />
     </div>
 
     <div class="form-group">
@@ -21,7 +21,7 @@
         required
         maxlength="50"
         placeholder="password"
-      >
+      />
     </div>
 
     <button type="submit" :disabled="!isFormValid">Войти</button>
@@ -30,31 +30,30 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { useAppStore } from '@/stores';
+import { useAppStore } from '@/stores'
 
 const appStore = useAppStore()
 
 // Реактивный объект для формы
 const auth = ref({
   login: '',
-  password: ''
+  password: '',
 })
 
 // Валидация формы
 const isFormValid = computed(() => {
-  return auth.value.login.trim().length > 0 && 
-         auth.value.password.trim().length > 0
+  return auth.value.login.trim().length > 0 && auth.value.password.trim().length > 0
 })
 
 // Метод сброса формы
 const resetForm = () => {
   auth.value = {
     login: '',
-    password: ''
+    password: '',
   }
 }
 
-const sendForm = async() => {
+const sendForm = async () => {
   await appStore.auth(auth.value)
   resetForm()
 }

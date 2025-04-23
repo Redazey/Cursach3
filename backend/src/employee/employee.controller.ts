@@ -18,7 +18,7 @@ export class EmployeeController {
     return this.employeeService.createEmployee(employee);
   }
   @Post('delete/:id')
-  createEmployee(@Param() id: number) {
+  createEmployee(@Param('id') id: number) {
     return this.employeeService.deleteEmployee(id);
   }
 }
