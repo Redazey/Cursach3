@@ -7,7 +7,9 @@ import employeeList from '@/components/employeeList.vue'
   <div class="app-container">
     <div class="header-container">
       <header>
-        <img alt="logo" src="@/assets/logo.png" width="100px" />
+        <RouterLink to="/auth">
+          <img alt="logo" src="@/assets/logo.png" width="100px" />
+        </RouterLink>
         <h1>Zoo Cure</h1>
 
         <div class="wrapper">
@@ -65,7 +67,7 @@ header {
 
 nav {
   width: 100%;
-  font-size: 14px;
+  font-size: 24px;
   text-align: center;
 }
 
@@ -111,7 +113,8 @@ footer {
   nav {
     display: inline;
     margin-left: -1rem;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    font-weight: bolder;
   }
 }
 </style>

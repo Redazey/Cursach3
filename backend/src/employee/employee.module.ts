@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { EmployeeController } from './employee.controller';
 import { EmployeeService } from './employee.service';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { Veterinarian } from './entities/employee.model';
+import { Veterinarian } from './entities/employee.entity';
 
 @Module({
   imports: [SequelizeModule.forFeature([Veterinarian])],

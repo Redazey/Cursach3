@@ -2,9 +2,9 @@
   <div class="news-container">
     <article class="news-card" v-for="n in news" :key="n.id">
       <img :src="n.image_path" @error="handleImageError" height="200px" loading="lazy" />
-      <h4>{{ n.title }}</h4>
-      <h5>{{ n.content }}</h5>
-      <h5>{{ n.publication_date }}</h5>
+      <h2>{{ n.title }}</h2>
+      <h3>{{ n.content }}</h3>
+      <h3>{{ n.publication_date }}</h3>
     </article>
   </div>
 </template>
@@ -30,8 +30,15 @@ onMounted(async () => {
 <style>
 .news-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
+}
+@media (min-width: 1024px) {
+  .news-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
 }
 .news-card {
   text-align: center;
@@ -41,7 +48,7 @@ onMounted(async () => {
   color: var(--color-text);
   min-height: fit-content;
 }
-.news-card h4 {
+.news-card h2 {
   font-weight: bolder;
 }
 </style>

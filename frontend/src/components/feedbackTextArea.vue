@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="sendForm" class="feedback-form">
+  <form @submit.prevent="sendForm" class="form">
     <div class="form-group">
       <label for="nickname">Никнейм</label>
       <input 
@@ -55,41 +55,7 @@ const resetForm = () => {
 
 const sendForm = async() => {
   await appStore.createFeedback(feedback.value)
+  await appStore.fetchFeedbacks()
   resetForm()
 }
 </script>
-
-<style scoped>
-.feedback-form {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: var(--color-background-soft);
-  color: var(--color-text-white);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:disabled {
-  color: var(--color-text);
-  background-color: var(--color-background-mute);
-  cursor: not-allowed;
-}
-</style>

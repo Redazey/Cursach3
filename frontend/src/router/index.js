@@ -4,6 +4,7 @@ import AboutUs from '@/views/AboutUs.vue'
 import ContactsUs from '@/views/ContactsUs.vue'
 import PhotoGallery from '@/views/PhotoGallery.vue'
 import FeedBack from '@/views/FeedBack.vue'
+import AuthToAdmin from '@/views/AuthToAdmin.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/feedBack',
       name: 'feedback',
       component: FeedBack,
+    },
+    {
+      path: '/auth',
+      name: 'auth to admin panel',
+      component: AuthToAdmin,
     },
   ],
 })

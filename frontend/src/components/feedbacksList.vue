@@ -1,8 +1,9 @@
 <template>
   <div class="feedback-container">
-    <article class="feedback-card" v-for="fb in feedbacks">
-      <h4>Имя: {{ fb.nickname }}</h4>
-      <h5>{{ fb.feedback_text }}</h5>
+    <article class="feedback-card" v-for="fb in feedbacks" :key="fb.id">
+      <h3>Имя: {{ fb.nickname }}</h3>
+      <p>{{ fb.feedback_text }}</p>
+      <button v-if="jwtToken" @click="deleteFeedbackClick(fb.id)">Удалить</button>
     </article>
   </div>
 </template>
@@ -13,7 +14,11 @@ import { storeToRefs } from 'pinia'
 import { onMounted } from 'vue'
 
 const appStore = useAppStore()
-const { feedbacks } = storeToRefs(appStore)
+const { feedbacks, jwtToken } = storeToRefs(appStore)
+
+const deleteFeedbackClick = async(id) => {
+  
+}
 
 onMounted(async () => {
   await appStore.fetchFeedbacks()
@@ -22,12 +27,11 @@ onMounted(async () => {
 
 <style>
 .feedback-card {
-  min-width: fit-content;
   width: 50%;
   padding: 10px;
   color: var(--color-text-white);
 }
-.feedback-card h4 {
+.feedback-card h3 {
   border-bottom: 1px var(--color-background-mute) solid;
   margin-bottom: 20px;
 }
