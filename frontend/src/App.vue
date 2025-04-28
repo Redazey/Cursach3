@@ -67,7 +67,7 @@ header {
 
 nav {
   width: 100%;
-  font-size: 24px;
+  font-size: 18pt;
   text-align: center;
 }
 
@@ -98,7 +98,7 @@ footer {
   min-height: 10vh;
   text-align: center;
   padding-top: 15px;
-  font-size: 24px;
+  font-size: 18pt;
   color: var(--color-background);
   background-color: var(--vt-c-text-light-2);
 }

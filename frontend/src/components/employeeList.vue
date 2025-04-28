@@ -82,16 +82,6 @@ import placeholderImg from '@/assets/news_placeholder.png'
 const appStore = useAppStore()
 const { employees, jwtToken } = storeToRefs(appStore)
 
-// Реактивный объект для формы
-const new_employee = ref({
-  image_path: '',
-  first_name: '',
-  last_name: '',
-  middle_name: '',
-  email: '',
-  phone: '',
-})
-
 const onChange = async (e) => {
   const file = e.target.files[0]
   const uploadedFile = await appStore.createFile(file)
@@ -110,6 +100,17 @@ const deleteEmployeeClick = async (id) => {
   await appStore.deleteEmployee(id)
 }
 
+// Реактивный объект для формы
+const new_employee = ref({
+  image_path: '',
+  first_name: '',
+  last_name: '',
+  middle_name: '',
+  email: '',
+  phone: '',
+})
+
+// Функция, которая обнуляет значения, используемые в форме
 const resetForm = () => {
   new_employee.value = {
     image_path: '',
@@ -120,6 +121,8 @@ const resetForm = () => {
     phone: '',
   }
 }
+
+// Функция для проверки длинны вводимых значений, для разблокировки формы
 const isFormValid = computed(() => {
   return (
     new_employee.value.first_name.trim().length > 0 &&
@@ -129,9 +132,11 @@ const isFormValid = computed(() => {
     new_employee.value.phone.trim().length > 0
   )
 })
+
+// Функция для отправки формы
 const sendForm = async () => {
-  await appStore.createEmployee(new_employee.value)
-  resetForm()
+  await appStore.createEmployee(new_employee.value) // Создание POST запроса на API, создающего запись в таблице "employee"
+  resetForm() // Обнуление формы
 }
 </script>
 

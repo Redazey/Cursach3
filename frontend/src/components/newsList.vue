@@ -10,7 +10,7 @@
             height="200px"
             :src="appStore.fetchImage(new_news.image_path)"
           />
-          <input type="file" @change="onChange" accept=".jpg,.jpeg,.png" />
+          <input type="file" @change="onChange" accept=".jpg,.jpeg,.png" /> 
           <div v-if="new_news.image_path == ''">Файл не выбран</div>
         </div>
         <input
@@ -78,13 +78,14 @@ const deleteNews = async (id) => {
   await appStore.deleteNews(id)
 }
 
+// Функция для обнаружения загрузки файла
 const onChange = async (e) => {
-  const file = e.target.files[0]
-  const uploadedFile = await appStore.createFile(file)
-  new_news.value.image_path = uploadedFile.path
-  console.log(uploadedFile.path)
+  const file = e.target.files[0] // Записываем загруженный файл в переменную
+  const uploadedFile = await appStore.createFile(file) // Отправляем POST запрос с файлом на API
+  new_news.value.image_path = uploadedFile.path // Добавляем в новости путь к загруженному изображению
 }
 
+// Функция для отображения альтернативного изображения, в случае если изображение отсутствует, или путь неправильный
 const handleImageError = (e) => {
   e.target.src = placeholderImg
 }
