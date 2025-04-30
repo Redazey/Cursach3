@@ -44,12 +44,6 @@ export class ClinicNews extends Model {
   })
   publication_date: Date;
 
-  @Column({
-    type: DataType.BOOLEAN,
-    defaultValue: false,
-  })
-  is_important: boolean;
-
   @CreatedAt
   created_at: Date;
 }
