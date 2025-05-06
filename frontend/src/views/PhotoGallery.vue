@@ -1,6 +1,6 @@
 <template>
   <div class="photo-gallery">
-    <h1 class="gallery-title">Фотогалерея</h1>
+    <h1 class="gallery-title">Фотогалерея ZooCure</h1>
 
     <Carousel :items-to-show="1" :autoplay="5000" :wrap-around="true">
       <Slide v-for="(slide, index) in slides" :key="index">
@@ -25,8 +25,8 @@ import { photo1, photo2, photo3, photo4 } from '@/assets/photogallery'
 
 // Данные для карусели
 const slides = [
-  { image: photo1, caption: 'Осмотр домашних питомцев' },
-  { image: photo2, caption: 'Наша современная клиника' },
+  { image: photo1, caption: 'Стоматология для животных' },
+  { image: photo2, caption: 'Клиника для животных Ярославль' },
   { image: photo3, caption: 'Груминг домашних животных' },
   { image: photo4, caption: 'Наша современная клиника' },
 ]

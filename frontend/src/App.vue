@@ -10,7 +10,7 @@ import employeeList from '@/components/employeeList.vue'
         <RouterLink to="/auth">
           <img alt="logo" src="@/assets/logo.png" width="100px" />
         </RouterLink>
-        <h1>Zoo Cure</h1>
+        <h1>Ветеринарная клиника - Zoo Cure</h1>
 
         <div class="wrapper">
           <nav>
@@ -32,8 +32,8 @@ import employeeList from '@/components/employeeList.vue'
     </main>
     <footer>
       <h5>
-        Доверьте здоровье вашего питомца профессионалам "ZooCure" – мы всегда рядом, когда нужна
-        помощь.
+        Доверьте здоровье вашего питомца профессионалам нашей ветклиники "ZooCure" – мы всегда рядом, когда нужна
+        ветеринарная помощь.
       </h5>
     </footer>
   </div>
